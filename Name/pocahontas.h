@@ -30,4 +30,6 @@ Node *smallestChild(Node *tp);
 /*Make the tree from the file you already have */
 Node *makeTree();
 
+void writeFile(Node *tp);
+
 #endif
