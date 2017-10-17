@@ -10,6 +10,40 @@
 #include <string.h>
 #include "pocahontas.h"
 
+/* Main method where initial calls are made */
+int main(){
+  Node *root; // Pointer for tree to be created
+  root = NULL; // create empty tree
+  int input = 0; // used for user input
+  char *name; // pointer for name to be inserted
+  int forScan; // used to store scanf value, no real usage, except for avoiding warnings
+  root = makeTree(); // add names from the existing file into current tree
+
+  printf("Current list of names: \n"); // print current names in the file
+  printTree(root);
+
+  // user interface
+  while (input != 4) {
+    printf("Type 1 to add names, 2 to remove names, 3 to print the current tree or 4 to exit\n");
+    forScan = scanf("%d", &input); // user input for what they want to do
+    if (input == 1) { // add a name
+      printf("Type name: ");
+      forScan = scanf("%s", name); // user inputs name to be added
+      root = add(root, name); // add name to tree
+    }
+    if (input == 2) { // remove a name
+      printf("Type name you want to delete: ");
+      forScan = scanf("%s", name); // user inputs name to delete
+      root = removeName(root, name); // remove the name
+    }
+    if (input == 3) { // print current tree inorder
+      printTree(root);
+      printf("\n");
+    }
+  }
+  return 0;
+}
+
   //Copy of the string is made and put into a node, need to add to tree from here
   Node *add(Node *tp, char *s) {
     // the copying and memory allocation was given by the professor in his llist.c file
@@ -18,10 +52,10 @@
       char *scopy; // copy of the string to be added
       int size; // used to traverse char array and get the size
        for (size = 0; s[size]; size++);
-       scopy = (char *)malloc(size + 1); // + 1 for the null character
+       	   scopy = (char *)malloc(size + 1); // + 1 for the null character
 
        for (size = 0; s[size]; size++)
-	 scopy[size] = s[size];
+    	   scopy[size] = s[size];
        scopy[size] = 0; // set null character
 
        np = (Node *)malloc(sizeof(Node)); // allocate memory
@@ -31,15 +65,17 @@
        return np; // return the newly inserted node
 
     }
-    int cmp;// used to store strcmp value
 
+    int cmp;// used to store strcmp value
     cmp = strcmp(s, tp->string); // compare strings
+
     if (cmp < 0) { // go to left child
       tp->left =  add(tp->left, s); // add to left if less
     }
     if (cmp > 0) {
       tp->right = add(tp->right, s); // add to right
     }
+    writeFile(tp);
     return tp;
 }
 
@@ -60,6 +96,7 @@ Node *removeName(Node *tp, char *s) {
     return tp;
 
   int cmp;
+  Node *temp; // temp variable
   cmp = strcmp(s, tp->string); // check to see if the string is smaller or larger
 
   if (cmp < 0) { // go to left child
@@ -70,28 +107,26 @@ Node *removeName(Node *tp, char *s) {
   }
 
   // strings are equal, so delete this node
+
   if (tp->left == NULL) { //has right child, but no left
-    Node *np; // create temp pointer
-    np = tp->right;
+    temp = tp->right;
     free(tp); // free the memory
-    return np;
+    tp = temp;
   }
   if (tp->right == NULL) { //has left child, but no right child
-    Node *np; // create temp pointer
-    np = tp->left;
+    temp = tp->left;
     free(tp); // free memory
-    return np;
+    tp = temp;
   }
+  else{
+	  // has two children
+	  temp = smallestChild(tp->right); // calls auxiliary method
 
-  // has two children
-  Node *np; // temp pointer
-  np = smallestChild(tp->right); // calls auxiliary method
-
-  tp->string = np->string; // set the char *
-  tp->right = removeName(tp->right, np->string); // remove the Node
-
+	  tp->string = temp->string; // set the char *
+	  tp->right = removeName(tp->right, temp->string); // remove the Node
+  }
+  writeFile(tp);
   return tp;
-
 }
 
 /* finds node to replace the root being deleted */
@@ -107,9 +142,8 @@ Node *smallestChild(Node  *tp) {
 Node *makeTree() {
   FILE *file;
   file = fopen("employees.txt", "r"); // only to read names
-  char data[50];
+  char data[100];
   Node *tp = NULL;
-
   while(fgets(data,50,file)!=NULL) {
     tp = add(tp, data); // add the names to the binary tree
   }
@@ -119,55 +153,14 @@ Node *makeTree() {
 /* writes the names to the text file in preorder */
 void writeFile(Node *tp) {
   FILE *file;
-  file = fopen("employees.txt", "a"); // append mode
+  remove("employees.txt");
+  file = fopen("employees.txt", "w"); // append mode
 
   if (tp != NULL) {
     fprintf(file, "%s\n", tp->string); // rights current name
-    fseek(file, 0, SEEK_END);  // points to end of file
+    fseek(file, 0, SEEK_SET);  // points to end of file
     writeFile(tp->left); // recusive call to go to the left subtree
-    fseek(file, 0, SEEK_END); // points to end of file
+    fseek(file, 0, SEEK_SET); // points to end of file
     writeFile(tp->right); // recursive call to right subtree
   }
 }
-
-/* Main method where initial calls are made */
-int main() {
-  Node *tp; // Pointer for tree to be created
-  tp = NULL; // create empty tree
-  int input = 0; // used for user input
-  char *name; // pointer for name to be inserted
-  int forScan; // used to store scanf value, no real usage, except for avoiding warnings
-  tp = makeTree(); // add names from the existing file into current tree
-
-  printf("Current list of names: \n"); // print current names in the file
-  printTree(tp);
-
-  // user interface
-  while (input != 4) {
-    printf("Type 1 to add names, 2 to remove names, 3 to print the current tree, 4 to exit\n");
-    forScan = scanf("%d", &input); // user input for what they want to do
-    if (input == 1) { // add a name
-      printf("Type name: ");
-      forScan = scanf("%s", name); // user inputs name to be added
-      tp = add(tp, name); // add name to tree
-
-    }
-    if (input == 2) { // remove a name
-      printf("Type name you want to delete: ");
-      forScan = scanf("%s", name); // user inputs name to delete
-      tp = removeName(tp, name); // remove the name
-    }
-    if (input == 3) { // print current tree inorder
-      printTree(tp);
-      printf("\n");
-    }
-
-  }
-
-  writeFile(tp); // write names into file after done adding
-
-  return 0;
-
-}
-
-
