@@ -46,38 +46,38 @@ int main(){
 
   //Copy of the string is made and put into a node, need to add to tree from here
   Node *add(Node *tp, char *s) {
-    // the copying and memory allocation was given by the professor in his llist.c file
-    if(tp == NULL) { //Base Case
-      Node *np; // pointer for node going to be added
-      char *scopy; // copy of the string to be added
-      int size; // used to traverse char array and get the size
-       for (size = 0; s[size]; size++);
-       	   scopy = (char *)malloc(size + 1); // + 1 for the null character
+		// the copying and memory allocation was given by the professor in his llist.c file
+		if(tp == NULL) { //Base Case
+		  Node *np; // pointer for node going to be added
+		  char *scopy; // copy of the string to be added
+		  int size; // used to traverse char array and get the size
+		   for (size = 0; s[size]; size++)
+			   scopy = (char *)malloc(size + 1); // + 1 for the null character
 
-       for (size = 0; s[size]; size++)
-    	   scopy[size] = s[size];
-       scopy[size] = 0; // set null character
+		   for (size = 0; s[size]; size++)
+			   scopy[size] = s[size];
+		   scopy[size] = 0; // set null character
 
-       np = (Node *)malloc(sizeof(Node)); // allocate memory
-       np->string = scopy; // set pointer to correct string
-       np->left = np->right = NULL;
-       // printf("String added: %s\n", scopy); //used for debugging
-       return np; // return the newly inserted node
+		   np = (Node *)malloc(sizeof(Node)); // allocate memory
+		   np->string = scopy; // set pointer to correct string
+		   np->left = np->right = NULL;
+		   // printf("String added: %s\n", scopy); //used for debugging
+		   return np; // return the newly inserted node
 
-    }
+		}
 
-    int cmp;// used to store strcmp value
-    cmp = strcmp(s, tp->string); // compare strings
+		int cmp;// used to store strcmp value
+		cmp = strcmp(s, tp->string); // compare strings
 
-    if (cmp < 0) { // go to left child
-      tp->left =  add(tp->left, s); // add to left if less
-    }
-    if (cmp > 0) {
-      tp->right = add(tp->right, s); // add to right
-    }
-    writeFile(tp);
-    return tp;
-}
+		if (cmp < 0) { // go to left child
+		  tp->left =  add(tp->left, s); // add to left if less
+		}
+		if (cmp > 0) {
+		  tp->right = add(tp->right, s); // add to right
+		}
+		writeFile(tp);
+		return tp;
+  	}
 
 /* Prints tree inorder */
 void printTree(Node *tp) {
