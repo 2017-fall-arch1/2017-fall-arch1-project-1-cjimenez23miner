@@ -1,66 +1,19 @@
-################################################################################
-# Automatically-generated file. Do not edit!
-################################################################################
+all: pocahontas
 
--include ../makefile.init
-
-RM := rm -rf
-
-# All of the sources participating in the build are defined here
--include sources.mk
--include subdir.mk
--include objects.mk
-
-ifneq ($(MAKECMDGOALS),clean)
-ifneq ($(strip $(C_DEPS)),)
--include $(C_DEPS)
-endif
-endif
-
--include ../makefile.defs
-
-# Add inputs and outputs from these tool invocations to the build variables 
-
-# All Target
-all: Name
-
-# Tool invocations
-Name: $(OBJS) $(USER_OBJS)
-	@echo 'Building target: $@'
-	@echo 'Invoking: Cross GCC Linker'
-	gcc  -o "Name" $(OBJS) $(USER_OBJS) $(LIBS)
-	@echo 'Finished building target: $@'
-	@echo ' '
-
-# Other Targets
-clean:
-	-$(RM) $(EXECUTABLES)$(OBJS)$(C_DEPS) Name
-	-@echo ' '
-
-.PHONY: all clean dependents
-
--include ../makefile.targets
-###################################################
-
-#all: pocahontas
-
-#CFLAGS=-g -O3
+CFLAGS=-g -O3
 
 # Symbols helpful for understanding the productions
 #   $@ is the production's target
 #   $^ are the production's prerequisites
 
-#llDemo: llist.o llDemo.o
-#	cc -o $@ $^
+pocahontas: pocahontas.c
+	cc -o $@ $^
 
-#llist.o: llist.c llist.h
-#	cc -c $(CFLAGS) llist.c
+pocahontas.o: pocahontas.c pocahontas.h
+	cc -c $(CFLAGS) pocahontas.c
 
-#llDemo.o: llDemo.c llist.h
-#	cc -c $(CFLAGS) llDemo.c
+clean:
+	rm -f *.o pocahontas
 
-#clean:
-#	rm -f *.o llDemo
-
-#demo: llDemo
-#	(echo first; echo "second line"; echo "third and last") | ./llDemo
+demo: pocahontas
+	./pocahontas

@@ -1,0 +1,591 @@
+ _____________________________
+/ It's not easy, being green. \
+|                             |
+\ -- Kermit the Frog          /
+ -----------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+[student@localhost Name]$ ls
+ Debug		 lol	    pocahontas.c      pocahontas.h
+ employees.txt	 makefile  '#pocahontas.h#'   README.md
+[student@localhost Name]$ gcc -o lol pocahontas.c
+[student@localhost Name]$ ./lol
+Current list of names: 
+Type 1 to add names, 2 to remove names, 3 to print the current tree or 4 to exit
+1
+Type name: String added: 
+
+
+Type 1 to add names, 2 to remove names, 3 to print the current tree or 4 to exit
+4
+
+[student@localhost Name]$ !-1
+./lol
+Current list of names: 
+Type 1 to add names, 2 to remove names, 3 to print the current tree or 4 to exit
+4
+
+[student@localhost Name]$ !-2
+ls
+ Debug		 lol	    pocahontas.c      pocahontas.h
+ employees.txt	 makefile  '#pocahontas.h#'   README.md
+[student@localhost Name]$ !-2
+./lol
+Current list of names: 
+Type 1 to add names, 2 to remove names, 3 to print the current tree or 4 to exit
+1
+Type name: String added: 
+
+
+Type 1 to add names, 2 to remove names, 3 to print the current tree or 4 to exit
+1
+Type name: 
+Type 1 to add names, 2 to remove names, 3 to print the current tree or 4 to exit
+1
+Type name: 
+Type 1 to add names, 2 to remove names, 3 to print the current tree or 4 to exit
+4
+
+[student@localhost Name]$ gcc -o lol pocahontas.c
+[student@localhost Name]$ ./lol
+Current list of names: 
+Type 1 to add names, 2 to remove names, 3 to print the current tree or 4 to exit
+1
+Type name: String added: ÿÿðÎ¯¿°îY·°Äu·
+
+ Current list: 
+
+Type 1 to add names, 2 to remove names, 3 to print the current tree or 4 to exit
+4
+
+ Current list: 
+
+[student@localhost Name]$ !-1
+./lol
+Current list of names: 
+Type 1 to add names, 2 to remove names, 3 to print the current tree or 4 to exit
+4
+
+ Current list: 
+
+[student@localhost Name]$ !-5
+./lol
+Current list of names: 
+Type 1 to add names, 2 to remove names, 3 to print the current tree or 4 to exit
+4
+
+ Current list: 
+
+[student@localhost Name]$ !-8
+no
+bash: no: command not found...
+[student@localhost Name]$ clear
+[student@localhost Name]$ gcc -o lol pocahontas.c
+Segmentation fault (core dumped)
+[student@localhost Name]$ !-1
+./lol
+Current list of names: 
+Type 1 to add names, 2 to remove names, 3 to print the current tree or 4 to exit
+4
+
+ Current list: 
+
+[student@localhost Name]$ gcc -o lol pocahontas.c
+pocahontas.c: In function â€˜removeNameâ€™:
+pocahontas.c:102:12: error: â€˜rpâ€™ undeclared (first use in this function); did you mean â€˜tpâ€™?
+     return rp;
+            ^~
+            tp
+pocahontas.c:102:12: note: each undeclared identifier is reported only once for each function it appears in
+[student@localhost Name]$ gcc -o lol pocahontas.c
+[student@localhost Name]$ ./lol
+Current list of names: 
+Type 1 to add names, 2 to remove names, 3 to print the current tree or 4 to exit
+1
+Type name: lol
+String added: lol
+
+ Current list: 
+
+Type 1 to add names, 2 to remove names, 3 to print the current tree or 4 to exit
+3
+
+ Current list: 
+
+Type 1 to add names, 2 to remove names, 3 to print the current tree or 4 to exit
+1
+Type name: pop
+String added: popû
+
+ Current list: 
+
+Type 1 to add names, 2 to remove names, 3 to print the current tree or 4 to exit
+4
+
+ Current list: 
+
+[student@localhost Name]$ gcc -o lol pocaontas.c
+gcc: error: pocaontas.c: No such file or directory
+gcc: fatal error: no input files
+compilation terminated.
+[student@localhost Name]$ gcc -o lol pocahontas.c
+[student@localhost Name]$ ./lol
+Current list of names: 
+Type 1 to add names, 2 to remove names, 3 to print the current tree or 4 to exit
+1
+Type name: lol
+String added: lol
+
+ Current list: 
+
+Type 1 to add names, 2 to remove names, 3 to print the current tree or 4 to exit
+3
+lol
+
+ Current list: 
+
+Type 1 to add names, 2 to remove names, 3 to print the current tree or 4 to exit
+1
+Type name: pop
+String added: popû
+
+ Current list: 
+
+Type 1 to add names, 2 to remove names, 3 to print the current tree or 4 to exit
+1
+Type name: adam sandler
+String added: adam
+
+ Current list: 
+
+Type 1 to add names, 2 to remove names, 3 to print the current tree or 4 to exit
+Type name: String added: sandler
+
+ Current list: 
+
+Type 1 to add names, 2 to remove names, 3 to print the current tree or 4 to exit
+3
+adam
+lol
+popû
+sandler
+
+ Current list: 
+
+Type 1 to add names, 2 to remove names, 3 to print the current tree or 4 to exit
+2
+Type name you want to delete: lol
+
+ Current list: 
+
+Type 1 to add names, 2 to remove names, 3 to print the current tree or 4 to exit
+3
+adam
+popû
+sandler
+
+ Current list: 
+
+Type 1 to add names, 2 to remove names, 3 to print the current tree or 4 to exit
+41
+
+ Current list: 
+
+Type 1 to add names, 2 to remove names, 3 to print the current tree or 4 to exit
+1
+Type name: carlos
+String added: carlosk
+
+ Current list: 
+
+Type 1 to add names, 2 to remove names, 3 to print the current tree or 4 to exit
+1
+Type name: farid
+String added: farid
+
+ Current list: 
+
+Type 1 to add names, 2 to remove names, 3 to print the current tree or 4 to exit
+1
+Type name: lala
+String added: lala
+
+ Current list: 
+
+Type 1 to add names, 2 to remove names, 3 to print the current tree or 4 to exit
+1
+Type name: jajja
+String added: jajja
+
+ Current list: 
+
+Type 1 to add names, 2 to remove names, 3 to print the current tree or 4 to exit
+1
+Type name: pappapap
+String added: pappapap
+
+ Current list: 
+
+Type 1 to add names, 2 to remove names, 3 to print the current tree or 4 to exit
+1
+Type name: hahhahha
+String added: hahhahha
+
+ Current list: 
+
+Type 1 to add names, 2 to remove names, 3 to print the current tree or 4 to exit
+3
+adam
+carlosk
+farid
+hahhahha
+jajja
+lala
+pappapap
+popû
+sandler
+
+ Current list: 
+
+Type 1 to add names, 2 to remove names, 3 to print the current tree or 4 to exit
+2
+Type name you want to delete: adam
+
+ Current list: 
+
+Type 1 to add names, 2 to remove names, 3 to print the current tree or 4 to exit
+3
+carlosk
+farid
+hahhahha
+jajja
+lala
+pappapap
+popû
+sandler
+
+ Current list: 
+
+Type 1 to add names, 2 to remove names, 3 to print the current tree or 4 to exit
+3
+carlosk
+farid
+hahhahha
+jajja
+lala
+pappapap
+popû
+sandler
+
+ Current list: 
+
+Type 1 to add names, 2 to remove names, 3 to print the current tree or 4 to exit
+2
+Type name you want to delete: papp
+
+ Current list: 
+
+Type 1 to add names, 2 to remove names, 3 to print the current tree or 4 to exit
+3
+carlosk
+farid
+hahhahha
+jajja
+lala
+pappapap
+popû
+sandler
+
+ Current list: 
+
+Type 1 to add names, 2 to remove names, 3 to print the current tree or 4 to exit
+4
+
+ Current list: 
+
+[student@localhost Name]$ gcc -o lol pocahontas.c
+[student@localhost Name]$ ./lol
+Current list of names: 
+Type 1 to add names, 2 to remove names, 3 to print the current tree or 4 to exit
+1
+Type name: pop
+String added: pop
+
+ Current list on file: 
+
+Type 1 to add names, 2 to remove names, 3 to print the current tree or 4 to exit
+4
+
+ Current list on file: 
+
+[student@localhost Name]$ gcc -o lol pocahontas.c
+pocahontas.c: In function â€˜writeFileâ€™:
+pocahontas.c:159:29: error: stray â€˜\â€™ in program
+     fputs(strcat(tp->string,\n), file);
+                             ^
+pocahontas.c:159:30: error: â€˜nâ€™ undeclared (first use in this function)
+     fputs(strcat(tp->string,\n), file);
+                              ^
+pocahontas.c:159:30: note: each undeclared identifier is reported only once for each function it appears in
+[student@localhost Name]$ gcc -o lol pocahontas.c
+[student@localhost Name]$ ./lol
+Current list of names: 
+Type 1 to add names, 2 to remove names, 3 to print the current tree or 4 to exit
+1
+Type name: lol
+String added: lol
+
+ Current list on file: 
+
+Type 1 to add names, 2 to remove names, 3 to print the current tree or 4 to exit
+
+
+4
+
+ Current list on file: 
+
+[student@localhost Name]$ ls
+ Debug		 lol	    pocahontas.c      pocahontas.h  '*shell*'
+ employees.txt	 makefile  '#pocahontas.h#'   README.md
+[student@localhost Name]$ remove lol
+bash: remove: command not found...
+[student@localhost Name]$ rm lol
+[student@localhost Name]$ gcc -o lol pocahontas.c
+[student@localhost Name]$ ./lol
+Current list of names: 
+Type 1 to add names, 2 to remove names, 3 to print the current tree or 4 to exit
+1
+Type name: lol
+String added: lol
+
+ Current list on file: 
+
+Type 1 to add names, 2 to remove names, 3 to print the current tree or 4 to exit
+4
+
+ Current list on file: 
+
+[student@localhost Name]$ ./lol
+bash: $: command not found...
+[student@localhost Name]$ ./lol
+String added: lol locnsj
+
+String added: nvbfj fknvkr
+
+String added: vnfkjvn kfnvrk
+
+String added: fknvrk kvnrkn
+
+String added: bfvjfbv
+
+String added: nvrknmb
+
+String added: fkknbvkr kfmbklrmb
+
+String added: nfbjn
+
+String added: bnkfnb
+
+String added: nbkfnb
+
+String added:  kbnkbn
+
+String added:   knbkfnb
+
+String added: mnbkfn
+
+String added: xk
+û
+Current list of names: 
+  knbkfnb
+
+ kbnkbn
+
+bfvjfbv
+
+bnkfnb
+
+fkknbvkr kfmbklrmb
+
+fknvrk kvnrkn
+
+lol locnsj
+
+mnbkfn
+
+nbkfnb
+
+nfbjn
+
+nvbfj fknvkr
+
+nvrknmb
+
+vnfkjvn kfnvrk
+
+xk
+û
+Type 1 to add names, 2 to remove names, 3 to print the current tree or 4 to exit
+1
+Type name: pop
+String added: pop·
+
+ Current list on file: 
+
+Type 1 to add names, 2 to remove names, 3 to print the current tree or 4 to exit
+3
+  knbkfnb
+
+ kbnkbn
+
+bfvjfbv
+
+bnkfnb
+
+fkknbvkr kfmbklrmb
+
+fknvrk kvnrkn
+
+lol locnsj
+
+mnbkfn
+
+nbkfnb
+
+nfbjn
+
+nvbfj fknvkr
+
+nvrknmb
+
+pop·
+vnfkjvn kfnvrk
+
+xk
+û
+
+ Current list on file: 
+
+Type 1 to add names, 2 to remove names, 3 to print the current tree or 4 to exit
+2
+Type name you want to delete: nfbjn
+
+ Current list on file: 
+
+Type 1 to add names, 2 to remove names, 3 to print the current tree or 4 to exit
+4
+
+ Current list on file: 
+
+[student@localhost Name]$ ./lol
+String added: lol locnsj
+
+String added: nvbfj fknvkr
+
+String added: vnfkjvn kfnvrk
+
+String added: fknvrk kvnrkn
+
+String added: bfvjfbv
+
+String added: nvrknmb
+
+String added: fkknbvkr kfmbklrmb
+
+String added: nfbjn
+
+String added: bnkfnb
+
+String added: nbkfnb
+
+String added: 
+$
+Current list of names: 
+
+$
+bfvjfbv
+
+bnkfnb
+
+fkknbvkr kfmbklrmb
+
+fknvrk kvnrkn
+
+lol locnsj
+
+nbkfnb
+
+nfbjn
+
+nvbfj fknvkr
+
+nvrknmb
+
+vnfkjvn kfnvrk
+
+Type 1 to add names, 2 to remove names, 3 to print the current tree or 4 to exit
+3
+
+$
+bfvjfbv
+
+bnkfnb
+
+fkknbvkr kfmbklrmb
+
+fknvrk kvnrkn
+
+lol locnsj
+
+nbkfnb
+
+nfbjn
+
+nvbfj fknvkr
+
+nvrknmb
+
+vnfkjvn kfnvrk
+
+
+ Current list on file: 
+
+Type 1 to add names, 2 to remove names, 3 to print the current tree or 4 to exit
+1
+Type name: lol
+String added: lol·
+
+ Current list on file: 
+
+Type 1 to add names, 2 to remove names, 3 to print the current tree or 4 to exit
+3
+
+$
+bfvjfbv
+
+bnkfnb
+
+fkknbvkr kfmbklrmb
+
+fknvrk kvnrkn
+
+lol·
+lol locnsj
+
+nbkfnb
+
+nfbjn
+
+nvbfj fknvkr
+
+nvrknmb
+
+vnfkjvn kfnvrk
+
+
+ Current list on file: 
+
+Type 1 to add names, 2 to remove names, 3 to print the current tree or 4 to exit

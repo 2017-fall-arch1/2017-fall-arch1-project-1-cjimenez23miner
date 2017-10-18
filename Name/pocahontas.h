@@ -32,4 +32,6 @@ Node *makeTree();
 
 void writeFile(Node *tp);
 
+void printFile();
+
 #endif
